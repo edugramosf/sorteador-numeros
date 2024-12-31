@@ -6,6 +6,12 @@
         if (isNaN(quantidade) || isNaN(de) || isNaN(ate)) {
             alert('Por favor, preencha todos os campos corretamente!');
             return;
+        } if (de > ate) {
+            alert('O campo "Do número" deve ser menor que campo "Até o número"');
+            return;
+        } if (quantidade > (ate - de + 1)) {
+            alert('O campo "Quantidade de números" deve ser menor ou igual a diferença entre os campos "Do número" e "Até o número"');
+            return;
         }
 
         let sorteados = [];
